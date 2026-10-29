@@ -1,0 +1,135 @@
+{
+  "id": "program-1793284721296",
+  "name": "Untitled Ladder Program",
+  "version": 1,
+  "tags": [
+    {
+      "name": "START",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    },
+    {
+      "name": "BOBINA",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    },
+    {
+      "name": "STOP",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    },
+    {
+      "name": "LÁMPARA",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    },
+    {
+      "name": "LAMP OFF",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    },
+    {
+      "name": "MOTOR",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    }
+  ],
+  "rungs": [
+    {
+      "id": "rung-1793284726064-0amh38",
+      "comment": "",
+      "elements": [
+        {
+          "kind": "branch",
+          "paths": [
+            [
+              {
+                "kind": "contact",
+                "contactType": "XIC",
+                "tag": "START"
+              }
+            ],
+            [
+              {
+                "kind": "contact",
+                "contactType": "XIC",
+                "tag": "BOBINA"
+              }
+            ]
+          ]
+        },
+        {
+          "kind": "contact",
+          "contactType": "XIO",
+          "tag": "STOP"
+        },
+        {
+          "kind": "coil",
+          "coilType": "OTE",
+          "tag": "BOBINA"
+        }
+      ]
+    },
+    {
+      "id": "rung-1793285071515-ounv37",
+      "comment": "",
+      "elements": [
+        {
+          "kind": "contact",
+          "contactType": "XIC",
+          "tag": "BOBINA"
+        },
+        {
+          "kind": "coil",
+          "coilType": "OTE",
+          "tag": "LÁMPARA"
+        }
+      ]
+    },
+    {
+      "id": "rung-1793285384814-i5lswk",
+      "comment": "",
+      "elements": [
+        {
+          "kind": "contact",
+          "contactType": "XIO",
+          "tag": "BOBINA"
+        },
+        {
+          "kind": "coil",
+          "coilType": "OTE",
+          "tag": "LAMP OFF"
+        }
+      ]
+    },
+    {
+      "id": "rung-1793285656909-453jf1",
+      "comment": "",
+      "elements": [
+        {
+          "kind": "contact",
+          "contactType": "XIC",
+          "tag": "BOBINA"
+        },
+        {
+          "kind": "coil",
+          "coilType": "OTE",
+          "tag": "MOTOR"
+        }
+      ]
+    }
+  ],
+  "hmiLayout": []
+}

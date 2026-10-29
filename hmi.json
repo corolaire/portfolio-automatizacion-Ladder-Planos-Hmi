@@ -1,0 +1,234 @@
+{
+  "id": "program-1793284721296",
+  "name": "Untitled Ladder Program",
+  "version": 1,
+  "tags": [
+    {
+      "name": "START",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    },
+    {
+      "name": "BOBINA",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    },
+    {
+      "name": "STOP",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    },
+    {
+      "name": "LÁMPARA",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    },
+    {
+      "name": "LAMP OFF",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    },
+    {
+      "name": "MOTOR",
+      "type": "BOOL",
+      "category": "internal",
+      "description": "",
+      "initialValue": false
+    }
+  ],
+  "rungs": [
+    {
+      "id": "rung-1793284726064-0amh38",
+      "comment": "",
+      "elements": [
+        {
+          "kind": "branch",
+          "paths": [
+            [
+              {
+                "kind": "contact",
+                "contactType": "XIC",
+                "tag": "START"
+              }
+            ],
+            [
+              {
+                "kind": "contact",
+                "contactType": "XIC",
+                "tag": "BOBINA"
+              }
+            ]
+          ]
+        },
+        {
+          "kind": "contact",
+          "contactType": "XIO",
+          "tag": "STOP"
+        },
+        {
+          "kind": "coil",
+          "coilType": "OTE",
+          "tag": "BOBINA"
+        }
+      ]
+    },
+    {
+      "id": "rung-1793285071515-ounv37",
+      "comment": "",
+      "elements": [
+        {
+          "kind": "contact",
+          "contactType": "XIC",
+          "tag": "BOBINA"
+        },
+        {
+          "kind": "coil",
+          "coilType": "OTE",
+          "tag": "LÁMPARA"
+        }
+      ]
+    },
+    {
+      "id": "rung-1793285384814-i5lswk",
+      "comment": "",
+      "elements": [
+        {
+          "kind": "contact",
+          "contactType": "XIO",
+          "tag": "BOBINA"
+        },
+        {
+          "kind": "coil",
+          "coilType": "OTE",
+          "tag": "LAMP OFF"
+        }
+      ]
+    },
+    {
+      "id": "rung-1793285656909-453jf1",
+      "comment": "",
+      "elements": [
+        {
+          "kind": "contact",
+          "contactType": "XIC",
+          "tag": "BOBINA"
+        },
+        {
+          "kind": "coil",
+          "coilType": "OTE",
+          "tag": "MOTOR"
+        }
+      ]
+    }
+  ],
+  "hmiLayout": [
+    {
+      "id": "widget-1793285966724-fjlg9e",
+      "type": "pushbutton",
+      "position": {
+        "x": 80,
+        "y": 140
+      },
+      "size": {
+        "width": 80,
+        "height": 80
+      },
+      "bindings": {
+        "tag": "START"
+      },
+      "config": {
+        "mode": "momentary",
+        "color": "green",
+        "label": "start"
+      }
+    },
+    {
+      "id": "widget-1793286076108-rj68cv",
+      "type": "pushbutton",
+      "position": {
+        "x": 320,
+        "y": 180
+      },
+      "size": {
+        "width": 80,
+        "height": 80
+      },
+      "bindings": {
+        "tag": "STOP"
+      },
+      "config": {
+        "mode": "momentary",
+        "color": "red",
+        "label": "stop"
+      }
+    },
+    {
+      "id": "widget-1793286124688-kj50tf",
+      "type": "indicator-light",
+      "position": {
+        "x": 160,
+        "y": 360
+      },
+      "size": {
+        "width": 60,
+        "height": 60
+      },
+      "bindings": {
+        "tag": "LÁMPARA"
+      },
+      "config": {
+        "activeColor": "blue",
+        "inactiveColor": "gray",
+        "label": "Light"
+      }
+    },
+    {
+      "id": "widget-1793286179154-isly19",
+      "type": "motor-symbol",
+      "position": {
+        "x": 380,
+        "y": 360
+      },
+      "size": {
+        "width": 100,
+        "height": 100
+      },
+      "bindings": {
+        "running": "MOTOR"
+      },
+      "config": {
+        "label": "Motor"
+      }
+    },
+    {
+      "id": "widget-1793286306931-ymkgs5",
+      "type": "pushbutton",
+      "position": {
+        "x": 640,
+        "y": 340
+      },
+      "size": {
+        "width": 80,
+        "height": 80
+      },
+      "bindings": {
+        "tag": "LAMP OFF"
+      },
+      "config": {
+        "mode": "momentary",
+        "color": "yellow",
+        "label": "DETENIDO"
+      }
+    }
+  ]
+}
